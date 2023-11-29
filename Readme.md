@@ -25,16 +25,16 @@ Define your application state using statefy:
 ```javascript
 const blogState = statefy({
     bookmarks: false,
-    blogs: undefined,
+    posts: undefined,
 });
 ```
 
 #### Mutating State
 react-statefy provides a mutate method to update your state. Here's an example of how to mutate the state:
 ```javascript
-export const blogsLoaded = (blogs) => {
+export const postsLoaded = (posts) => {
     blogState.mutate({
-        blogs: blogs,
+        posts: posts,
     });
 }
 
@@ -48,7 +48,6 @@ export const bookmarksLoaded = (bookmarks) => {
 
 #### Using State in Components
 Use the useStatefy hook to access your state within components:
-you can put mutators separately in a file and import them in your component
 
 ```javascript
 import { useStatefy } from "react-statefy";
@@ -56,17 +55,19 @@ import { useStatefy } from "react-statefy";
 const MyComponent = () => {
     
     useEffect(() => {
-        loadBlogs();
+        loadPosts();
     }, []);
 
-    const { blogs } = useStatefy(blogState, 'blogs'); // only render when blogs change
-    return <> {blogs.map(blog => <Blog blog={blog} />)}</>
+    const { posts } = useStatefy(blogState, 'posts'); // only render when posts change
+    return <> {posts.map(post => <Blog blog={post} />)}</>
 }
 ```
 
 ```javascript
-export const loadBlogs = async () => {
-    const blogs = await fetchBlogs();
-    blogsLoaded(blogs)
+export const loadPosts = async () => {
+    const posts = await fetchPosts();
+    postsLoaded(posts)
 }
 ```
+
+you can put loadPosts method to seperate file and import it in your component.
