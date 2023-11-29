@@ -1,0 +1,23 @@
+{
+  "name": "react-statefy",
+  "version": "0.0.1",
+  "description": "simple state management for react",
+  "main": "statefy.js",
+  "scripts": {},
+  "keywords": [
+    "react",
+    "state-management"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faaydemir/statefy"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
+  "devDependencies": {
+    "react": ">=18.0.0"
+  },
+  "author": "faaydemir",
+  "license": "ISC"
+}
