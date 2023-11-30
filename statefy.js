@@ -14,15 +14,15 @@ export default function statefy(state) {
 
 let componentIndex = 0;
 /**
- * @param  {Statefied} statefy - statefied object
+ * @param  {Statefied} statefied - statefied object
  * @param  {...string} usedProps - used properties 
  */
-export function useStatefy(statefy, ...usedProps) {
+export function useStatefy(statefied, ...usedProps) {
     const componentUnique = componentIndex++
-    const [state, setState] = useState(statefy.state())
+    const [state, setState] = useState(statefied.get())
 
-    const attach = () => statefy.addSetter(componentUnique, createSetter(setState, usedProps));
-    const detach = () => statefy.removeSetter(componentUnique)
+    const attach = () => statefied.addSetter(componentUnique, createSetter(setState, usedProps));
+    const detach = () => statefied.removeSetter(componentUnique)
 
     useEffect(() => attach(), []);
     useEffect(() => () => detach(), []);
