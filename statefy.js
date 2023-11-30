@@ -95,7 +95,7 @@ export class Statefied {
     /**
      * @returns {TState}
      */
-    state() {
+    get() {
         return this.store.get();
     }
 
