@@ -1,6 +1,6 @@
 {
   "name": "react-statefy",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "simple state management for react",
   "main": "statefy.js",
   "scripts": {},
