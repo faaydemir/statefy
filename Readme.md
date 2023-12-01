@@ -11,7 +11,9 @@ npm install react-statefy
 ## Usage
 
 #### Sample App
-Sample app is available at
+See 
+
+https://codesandbox.io/p/sandbox/statefy-sample-app-lzzhmj
 https://github.com/faaydemir/statefy-sample-app
 
 #### Importing Statefy
