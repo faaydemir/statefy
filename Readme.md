@@ -52,15 +52,16 @@ Use the useStatefy hook to access your state within components:
 ```javascript
 import { useStatefy } from "react-statefy";
 
-const MyComponent = () => {
+const Posts = () => {
     
     useEffect(() => {
         loadPosts();
     }, []);
 
-    const { posts } = useStatefy(blogState, 'posts'); // only render when posts change
-    return <> {posts.map(post => <Blog blog={post} />)}</>
+    const { posts } = useStatefy(blogState,'posts'); // only render when posts change
+    return <> {posts.map(post => <Post post={post} />)}</>
 }
+
 ```
 
 ```javascript
