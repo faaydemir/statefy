@@ -24,8 +24,7 @@ export function useStatefy(statefied, ...usedProps) {
     const attach = () => statefied.addSetter(componentUnique, createSetter(setState, usedProps));
     const detach = () => statefied.removeSetter(componentUnique)
 
-    useEffect(() => attach(), []);
-    useEffect(() => () => detach(), []);
+    useEffect(() => { attach(); return detach; }, []);
 
     return state;
 }
